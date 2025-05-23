@@ -125,9 +125,12 @@ export default function ReportPage() {
         </section>
 
         <section className="w-full max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-8 text-center font-sans">
-            Fund Sold from Portfolio to Date: $100,000
-          </h2>
+          <div className="w-fit mx-auto bg-card p-6 rounded-lg border border-border shadow-md flex items-center space-x-4 mb-8">
+            <div className="w-4 h-4 bg-green-500 rounded-full animate-breathe"></div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-accent font-sans">
+              Fund Sold from Portfolio to Date: $100,000
+            </h2>
+          </div>
           <Card className="shadow-lg rounded-lg bg-card">
             <CardContent className="p-0 md:p-2"> {/* Adjusted padding for better table presentation */}
               <div className="overflow-x-auto">
