@@ -1,7 +1,6 @@
 
-"use client"; // Add this directive
+"use client"; 
 
-// src/app/community/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
@@ -9,13 +8,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 
-// Placeholder for Twitter/X authentication logic
 const signInWithTwitter = () => {
-  // Implement Twitter/X authentication logic here
   console.log("Signing in with Twitter/X...");
 };
 
-// Placeholder for comment data structure
 interface Comment {
   id: string;
   avatarUrl: string;
@@ -25,7 +21,6 @@ interface Comment {
   text: string;
 }
 
-// Placeholder comment data
 const comments: Comment[] = [
   {
     id: "1",
@@ -46,8 +41,7 @@ const comments: Comment[] = [
 ];
 
 export default function CommunityPage() {
-  // Placeholder for user state
-  const user = null; // Replace with actual user object after authentication
+  const user = null; 
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -65,7 +59,7 @@ export default function CommunityPage() {
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
-          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md border-primary text-primary">
             Community
           </Button>
           <Link href="/dapp" passHref>
@@ -73,9 +67,11 @@ export default function CommunityPage() {
               Fund
             </Button>
           </Link>
-          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
-            Report
-          </Button>
+          <Link href="/report" passHref>
+            <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+              Report
+            </Button>
+          </Link>
           <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
         </div>
       </header>
@@ -110,7 +106,6 @@ export default function CommunityPage() {
         <h1 className="text-4xl font-bold mb-12 text-center text-primary">Community</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Can be used for other community-related content */}
           <div className="lg:col-span-1">
             <Card className="shadow-lg rounded-lg bg-card">
               <CardHeader>
@@ -122,7 +117,6 @@ export default function CommunityPage() {
             </Card>
           </div>
 
-          {/* Right Column - Comment Section */}
           <div className="lg:col-span-2">
             <Card className="shadow-lg rounded-lg bg-card">
               <CardHeader>

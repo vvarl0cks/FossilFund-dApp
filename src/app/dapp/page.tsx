@@ -31,12 +31,14 @@ export default function DAppPage() {
               Community
             </Button>
           </Link>
-          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md border-primary text-primary">
             Fund
           </Button>
-          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
-            Report
-          </Button>
+          <Link href="/report" passHref>
+            <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+              Report
+            </Button>
+          </Link>
           <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
         </div>
       </header>
