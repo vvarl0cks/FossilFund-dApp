@@ -86,7 +86,7 @@ export default function CommunityPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Can be used for other community-related content */}
           <div className="lg:col-span-1">
-            <Card className="shadow-lg">
+            <Card className="shadow-lg rounded-lg">
               <CardHeader>
                 <CardTitle className="text-2xl">About the Community</CardTitle>
               </CardHeader>
@@ -98,7 +98,7 @@ export default function CommunityPage() {
 
           {/* Right Column - Comment Section */}
           <div className="lg:col-span-2">
-            <Card className="shadow-lg">
+            <Card className="shadow-lg rounded-lg">
               <CardHeader>
                 <CardTitle className="text-2xl">Join the Conversation</CardTitle>
               </CardHeader>
@@ -115,7 +115,12 @@ export default function CommunityPage() {
                 ) : (
                   <div className="flex flex-col items-center justify-center mb-4 p-6 border border-dashed rounded-md">
                     <p className="mb-4 text-muted-foreground">Want to share your thoughts?</p>
-                    <Button onClick={signInWithTwitter} className="shadow-md">Sign in with X to comment</Button>
+                    <Button 
+                      onClick={signInWithTwitter} 
+                      className="shadow-md bg-[#51A2EB] hover:bg-[#3C8AD6] text-primary-foreground"
+                    >
+                      Sign in with X to comment
+                    </Button>
                   </div>
                 )}
 
