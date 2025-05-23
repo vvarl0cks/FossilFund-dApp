@@ -1,20 +1,30 @@
 
-"use client"; // Required for hooks and event handlers
+"use client";
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function DAppPage() {
-  const portfolioData = [
-    { asset: 'FOS', amount: '100,000', marketValue: '$100,000', address: '0x123...' },
-    { asset: 'SUI', amount: '50', marketValue: '$150,000', address: 'aba0c21ede8tAf7gYb8g' },
-    { asset: 'USDC', amount: '250,000', marketValue: '$250,000', address: '0x789...' },
-  ];
+// Define a dummy portfolio data array for demonstration
+const portfolioData = [
+  {
+    asset: 'SUI',
+    amount: '1000',
+    marketValue: '$1,200',
+    address: '0x123...',
+  },
+  {
+    asset: 'USDC',
+    amount: '5000',
+    marketValue: '$5,000',
+    address: '0x456...',
+  },
+];
 
+export default function DappPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="container mx-auto flex justify-between items-center py-6 px-4">
+    <div className="min-h-screen bg-background text-foreground font-sans">
+      <header className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-6 px-4 space-y-4 sm:space-y-0">
         <Link href="/" passHref>
           <div className="flex items-center cursor-pointer">
             <Image
@@ -23,8 +33,9 @@ export default function DAppPage() {
               width={40}
               height={40}
               data-ai-hint="logo dinosaur"
+              className="mr-2"
             />
-            <h1 className="text-3xl font-bold text-primary ml-2 font-sans">FossilFund</h1>
+            <h1 className="text-3xl font-bold text-primary ml-0 font-sans">FossilFund</h1>
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
@@ -45,8 +56,8 @@ export default function DAppPage() {
         </div>
       </header>
 
-      <main className="container mx-auto flex-grow py-8 px-4 flex flex-col items-center">
-         <section className="w-full max-w-4xl mb-12">
+      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow flex flex-col items-center">
+        <section className="w-full max-w-4xl mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <Image
@@ -72,8 +83,11 @@ export default function DAppPage() {
           </div>
         </section>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full max-w-2xl mb-12">
-          <Button className="font-semibold text-xl px-8 py-4 shadow-md w-full sm:w-auto border-2 border-border animate-pulse">
+        <div className="w-full max-w-4xl flex flex-col sm:flex-row justify-between items-center mb-10 space-y-4 sm:space-y-0">
+          <Button
+            className="w-full sm:w-auto text-lg sm:text-xl font-semibold px-6 py-4 sm:px-10 sm:py-6 rounded-lg shadow-lg"
+            size="lg"
+          >
             Lock Your $FOS
           </Button>
           <div className="text-lg sm:text-xl font-semibold text-card-foreground bg-card px-4 py-3 sm:py-4 rounded-md shadow-sm text-center w-full sm:w-auto">

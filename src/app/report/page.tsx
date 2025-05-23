@@ -1,7 +1,5 @@
 
 "use client";
-
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,62 +11,22 @@ import {
   TableRow,
   TableCell,
 } from "@/components/ui/table";
-
-interface ReportItem {
-  id: string;
-  iconUrl: string;
-  iconHint: string;
-  name: string;
-  researchColumn1: string;
-  researchColumn2: string;
-  contributedFunds: string;
-}
-
-const reportData: ReportItem[] = [
-  {
-    id: '1',
-    iconUrl: 'https://placehold.co/40x40.png',
-    iconHint: 'tiger face',
-    name: 'Tiger Research Inst',
-    researchColumn1: 'Resurrection of the',
-    researchColumn2: 'De-extinction of Dodo',
-    contributedFunds: '$30,000',
-  },
-  {
-    id: '2',
-    iconUrl: 'https://placehold.co/40x40.png',
-    iconHint: 'rhino silhouette',
-    name: 'Rhino Foundation',
-    researchColumn1: 'De-extinction of the Dodo',
-    researchColumn2: 'Musullen',
-    contributedFunds: '$25,000',
-  },
-  {
-    id: '3',
-    iconUrl: 'https://placehold.co/40x40.png',
-    iconHint: 'mammoth side',
-    name: 'Mammoth Center',
-    researchColumn1: 'Genome editing in',
-    researchColumn2: 'Woolly Mammoth',
-    contributedFunds: '$20,000',
-  },
-  {
-    id: '4',
-    iconUrl: 'https://placehold.co/40x40.png',
-    iconHint: 'wolf geometric',
-    name: 'Wolf Revival Society',
-    researchColumn1: 'Revival attempts for',
-    researchColumn2: 'Tasmanian Tiger',
-    contributedFunds: '$15,000',
-  },
-];
+import ConnectWallet from '@/components/ConnectWallet';
 
 export default function ReportPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="container mx-auto flex justify-between items-center py-6 px-4">
-        <Link href="/" passHref>
-          <div className="flex items-center cursor-pointer">
+    <main className="min-h-screen bg-gray-50">
+      <div className="container mx-auto py-8">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Sui Wallet Integration Test - Report
+        </h1>
+        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg">
+          <ConnectWallet />
+        </div>
+      </div>
+    </main>
+  );
+}
             <Image
               src="/fossil-logo.png"
               alt="FossilFund Logo"

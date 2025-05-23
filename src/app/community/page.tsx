@@ -1,56 +1,27 @@
 
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Textarea } from "@/components/ui/textarea";
-
-
-const signInWithTwitter = () => {
-  console.log("Signing in with Twitter/X...");
-  // Actual Twitter sign-in logic would go here
-};
-
-interface Comment {
-  id: string;
-  avatarUrl: string;
-  avatarHint: string;
-  name: string;
-  twitterHandle: string;
-  timestamp: string;
-  text: string;
-}
-
-const comments: Comment[] = [
-  {
-    id: "1",
-    avatarUrl: "https://placehold.co/40x40.png",
-    avatarHint: "user avatar",
-    name: "shadcn",
-    twitterHandle: "@shadcn",
-    timestamp: "2 hours ago",
-    text: "This is a great community section!",
-  },
-  {
-    id: "2",
-    avatarUrl: "https://placehold.co/40x40.png",
-    avatarHint: "person avatar",
-    name: "John Doe",
-    twitterHandle: "@johndoe",
-    timestamp: "1 hour ago",
-    text: "Looking forward to more updates.",
-  },
-];
+import ConnectWallet from '@/components/ConnectWallet';
 
 export default function CommunityPage() {
-  const user = null; // Placeholder for user authentication state
-
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="container mx-auto flex justify-between items-center py-6 px-4">
+    <main className="min-h-screen bg-gray-50">
+      <div className="container mx-auto py-8">
+        <h1 className="text-4xl font-bold text-center mb-8">
+          Sui Wallet Integration Test - Community
+        </h1>
+        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg">
+          <ConnectWallet />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+/*
+Old content from src/app/community/page.tsx:
+
+        <header className="container mx-auto flex justify-between items-center py-6 px-4">
         <Link href="/" passHref>
           <div className="flex items-center cursor-pointer">
             <Image
@@ -81,7 +52,6 @@ export default function CommunityPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow">
         <section className="w-full max-w-4xl mb-12 mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
@@ -175,6 +145,27 @@ export default function CommunityPage() {
           </div>
         </div>
       </main>
-    </div>
-  );
+
+const signInWithTwitter = () => {
+  console.log("Signing in with Twitter/X...");
+  // Actual Twitter sign-in logic would go here
+};
+
+interface Comment {
+  id: string;
+  avatarUrl: string;
+  avatarHint: string;
+  name: string;
+  twitterHandle: string;
+  timestamp: string;
+  text: string;
 }
+
+const comments: Comment[] = [
+  { id: "1", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "user avatar", name: "shadcn", twitterHandle: "@shadcn", timestamp: "2 hours ago", text: "This is a great community section!", },
+  { id: "2", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "person avatar", name: "John Doe", twitterHandle: "@johndoe", timestamp: "1 hour ago", text: "Looking forward to more updates.", },
+];
+
+  const user = null; // Placeholder for user authentication state
+
+*/

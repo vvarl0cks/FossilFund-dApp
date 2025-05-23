@@ -2,6 +2,7 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  transpilePackages: ['@mysten/dapp-kit'],
   typescript: {
     ignoreBuildErrors: true,
   },
