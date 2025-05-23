@@ -8,13 +8,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 
+
 const signInWithTwitter = () => {
   console.log("Signing in with Twitter/X...");
+  // Actual Twitter sign-in logic would go here
 };
 
 interface Comment {
   id: string;
   avatarUrl: string;
+  avatarHint: string;
   name: string;
   twitterHandle: string;
   timestamp: string;
@@ -25,6 +28,7 @@ const comments: Comment[] = [
   {
     id: "1",
     avatarUrl: "https://placehold.co/40x40.png",
+    avatarHint: "user avatar",
     name: "shadcn",
     twitterHandle: "@shadcn",
     timestamp: "2 hours ago",
@@ -33,6 +37,7 @@ const comments: Comment[] = [
   {
     id: "2",
     avatarUrl: "https://placehold.co/40x40.png",
+    avatarHint: "person avatar",
     name: "John Doe",
     twitterHandle: "@johndoe",
     timestamp: "1 hour ago",
@@ -41,7 +46,7 @@ const comments: Comment[] = [
 ];
 
 export default function CommunityPage() {
-  const user = null;
+  const user = null; // Placeholder for user authentication state
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -72,7 +77,7 @@ export default function CommunityPage() {
               Report
             </Button>
           </Link>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
+          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
         </div>
       </header>
 
@@ -137,7 +142,7 @@ export default function CommunityPage() {
                     <p className="mb-4 text-muted-foreground">Want to share your thoughts?</p>
                     <Button
                       onClick={signInWithTwitter}
-                      className="shadow-md text-primary-foreground"
+                      className="font-semibold shadow-md text-primary-foreground"
                       style={{ backgroundColor: '#51A2EB' }}
                       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#3C8AD6')}
                       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#51A2EB')}
@@ -151,7 +156,7 @@ export default function CommunityPage() {
                   {comments.map((comment) => (
                     <div key={comment.id} className="flex space-x-4 p-4 border border-border rounded-md shadow-sm bg-card">
                       <Avatar className="h-12 w-12">
-                        <AvatarImage src={comment.avatarUrl} data-ai-hint="profile user" />
+                        <AvatarImage src={comment.avatarUrl} data-ai-hint={comment.avatarHint} />
                         <AvatarFallback className="bg-muted text-muted-foreground">{comment.name.charAt(0).toUpperCase()}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">

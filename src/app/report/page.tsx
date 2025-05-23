@@ -93,7 +93,7 @@ export default function ReportPage() {
           <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md border-primary text-primary">
             Report
           </Button>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
+          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
         </div>
       </header>
 
@@ -125,14 +125,14 @@ export default function ReportPage() {
         </section>
 
         <section className="w-full max-w-5xl mx-auto">
-          <div className="w-fit mx-auto bg-card p-6 rounded-lg border border-border shadow-md flex items-center space-x-4 mb-8">
-            <div className="w-4 h-4 bg-green-500 rounded-full animate-breathe"></div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-accent font-sans">
+          <div className="w-fit mx-auto bg-card p-4 rounded-lg border border-border shadow-md flex items-center space-x-3 mb-8">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-breathe"></div>
+            <h2 className="text-xl sm:text-2xl font-bold text-accent font-sans">
               Fund Sold from Portfolio to Date: $100,000
             </h2>
           </div>
           <Card className="shadow-lg rounded-lg bg-card">
-            <CardContent className="p-0 md:p-2"> {/* Adjusted padding for better table presentation */}
+            <CardContent className="p-0 md:p-2">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>

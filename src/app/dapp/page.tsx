@@ -1,4 +1,6 @@
 
+"use client"; // Required for hooks and event handlers
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -39,12 +41,12 @@ export default function DAppPage() {
               Report
             </Button>
           </Link>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
+          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
         </div>
       </header>
 
-      <main className="container mx-auto flex-grow py-8 px-4 flex flex-col gap-12 items-center">
-        <section className="w-full max-w-4xl mb-12">
+      <main className="container mx-auto flex-grow py-8 px-4 flex flex-col items-center">
+         <section className="w-full max-w-4xl mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <Image
@@ -70,7 +72,7 @@ export default function DAppPage() {
           </div>
         </section>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full max-w-2xl">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full max-w-2xl mb-12">
           <Button className="font-semibold text-xl px-8 py-4 shadow-md w-full sm:w-auto border-2 border-border animate-pulse">
             Lock Your $FOS
           </Button>
