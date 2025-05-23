@@ -29,7 +29,7 @@ interface Comment {
 const comments: Comment[] = [
   {
     id: "1",
-    avatarUrl: "https://placehold.co/40x40.png", 
+    avatarUrl: "https://placehold.co/40x40.png",
     name: "shadcn",
     twitterHandle: "@shadcn",
     timestamp: "2 hours ago",
@@ -37,7 +37,7 @@ const comments: Comment[] = [
   },
   {
     id: "2",
-    avatarUrl: "https://placehold.co/40x40.png", 
+    avatarUrl: "https://placehold.co/40x40.png",
     name: "John Doe",
     twitterHandle: "@johndoe",
     timestamp: "1 hour ago",
@@ -61,15 +61,13 @@ export default function CommunityPage() {
               height={40}
               data-ai-hint="logo dinosaur"
             />
-            <h1 className="text-3xl font-bold text-primary ml-2">FossilFund</h1>
+            <h1 className="text-3xl font-bold text-primary ml-2 font-sans">FossilFund</h1>
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
-          <Link href="/community" passHref>
-            <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
-              Community
-            </Button>
-          </Link>
+          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+            Community
+          </Button>
           <Link href="/dapp" passHref>
             <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
               Fund
@@ -96,7 +94,7 @@ export default function CommunityPage() {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-5xl sm:text-6xl font-bold text-primary mb-6">
+              <h2 className="text-5xl sm:text-6xl font-bold text-primary mb-6 font-sans">
                 FossilFund
               </h2>
               <p className="text-lg text-foreground mb-4">
@@ -114,9 +112,9 @@ export default function CommunityPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Can be used for other community-related content */}
           <div className="lg:col-span-1">
-            <Card className="shadow-lg rounded-lg">
+            <Card className="shadow-lg rounded-lg bg-card">
               <CardHeader>
-                <CardTitle className="text-2xl">About the Community</CardTitle>
+                <CardTitle className="text-2xl text-card-foreground">About the Community</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">Welcome to the FossilFund community! Connect with other enthusiasts, share your thoughts on de-extinction, and stay updated on the latest project news.</p>
@@ -126,25 +124,25 @@ export default function CommunityPage() {
 
           {/* Right Column - Comment Section */}
           <div className="lg:col-span-2">
-            <Card className="shadow-lg rounded-lg">
+            <Card className="shadow-lg rounded-lg bg-card">
               <CardHeader>
-                <CardTitle className="text-2xl">Join the Conversation</CardTitle>
+                <CardTitle className="text-2xl text-card-foreground">Join the Conversation</CardTitle>
               </CardHeader>
               <CardContent>
                 {user ? (
                   <>
                     <div className="mb-4">
-                      <Textarea placeholder="Write a comment..." className="min-h-[100px] rounded-md border-input focus:ring-primary" />
+                      <Textarea placeholder="Write a comment..." className="min-h-[100px] rounded-md border-input focus:ring-primary bg-background text-foreground" />
                     </div>
                     <div className="flex justify-end">
-                      <Button className="shadow-md">Post Comment</Button>
+                      <Button className="shadow-md bg-primary text-primary-foreground hover:bg-primary/90">Post Comment</Button>
                     </div>
                   </>
                 ) : (
-                  <div className="flex flex-col items-center justify-center mb-4 p-6 border border-dashed rounded-md">
+                  <div className="flex flex-col items-center justify-center mb-4 p-6 border border-dashed rounded-md border-border">
                     <p className="mb-4 text-muted-foreground">Want to share your thoughts?</p>
-                    <Button 
-                      onClick={signInWithTwitter} 
+                    <Button
+                      onClick={signInWithTwitter}
                       className="shadow-md text-primary-foreground"
                       style={{ backgroundColor: '#51A2EB' }}
                       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#3C8AD6')}
@@ -157,10 +155,10 @@ export default function CommunityPage() {
 
                 <div className="mt-8 space-y-6">
                   {comments.map((comment) => (
-                    <div key={comment.id} className="flex space-x-4 p-4 border rounded-md shadow-sm bg-card">
+                    <div key={comment.id} className="flex space-x-4 p-4 border border-border rounded-md shadow-sm bg-card">
                       <Avatar className="h-12 w-12">
                         <AvatarImage src={comment.avatarUrl} data-ai-hint="profile user" />
-                        <AvatarFallback>{comment.name.charAt(0).toUpperCase()}</AvatarFallback>
+                        <AvatarFallback className="bg-muted text-muted-foreground">{comment.name.charAt(0).toUpperCase()}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-1">

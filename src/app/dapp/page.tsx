@@ -22,7 +22,7 @@ export default function DAppPage() {
               height={40}
               data-ai-hint="logo dinosaur"
             />
-            <h1 className="text-3xl font-bold text-primary ml-2">FossilFund</h1>
+            <h1 className="text-3xl font-bold text-primary ml-2 font-sans">FossilFund</h1>
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
@@ -55,7 +55,7 @@ export default function DAppPage() {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-5xl sm:text-6xl font-bold text-primary mb-6">
+              <h2 className="text-5xl sm:text-6xl font-bold text-primary mb-6 font-sans">
                 FossilFund
               </h2>
               <p className="text-lg text-foreground mb-4">
