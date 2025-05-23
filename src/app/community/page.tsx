@@ -83,6 +83,32 @@ export default function CommunityPage() {
       </header>
 
       <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow">
+        <section className="w-full max-w-4xl mb-12 mx-auto"> {/* Added mx-auto for centering */}
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="/fossil-logo.png"
+                alt="FossilFund Mascot"
+                width={420}
+                height={420}
+                className="rounded-lg"
+                data-ai-hint="dinosaur scientist coin"
+              />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-5xl sm:text-6xl font-bold text-primary mb-6">
+                FossilFund
+              </h2>
+              <p className="text-lg text-foreground mb-4">
+                FossilFund is a DeSci meme token designed to support real-world research on reviving extinct animals, inspired by the successful resurrection of the dire wolf.
+              </p>
+              <p className="text-lg text-foreground">
+                Managed by advanced AI, it lets users stake $FOS to earn rewards while actively contributing to scientific breakthroughs. Your crypto fuels the return of lost species.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <h1 className="text-4xl font-bold mb-12 text-center text-primary">Community</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -119,7 +145,10 @@ export default function CommunityPage() {
                     <p className="mb-4 text-muted-foreground">Want to share your thoughts?</p>
                     <Button 
                       onClick={signInWithTwitter} 
-                      className="shadow-md bg-[#51A2EB] hover:bg-[#3C8AD6] text-primary-foreground"
+                      className="shadow-md text-primary-foreground"
+                      style={{ backgroundColor: '#51A2EB' }}
+                      onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#3C8AD6')}
+                      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#51A2EB')}
                     >
                       Sign in with X to comment
                     </Button>
