@@ -2,6 +2,7 @@
 import type {Metadata} from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
+import WalletProvider from '@/components/WalletProvider'; // Import the WalletProvider
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,7 +12,7 @@ const inter = Inter({
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
   variable: '--font-roboto-mono',
-  weight: ['400', '700'], // Specify weights if needed
+  weight: ['400', '700'], 
 });
 
 export const metadata: Metadata = {
@@ -27,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${robotoMono.variable} font-sans`}>
-        {children}
+        <WalletProvider> {/* Wrap children with WalletProvider */}
+          {children}
+        </WalletProvider>
       </body>
     </html>
   );

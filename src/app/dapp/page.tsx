@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
 
 // Define a dummy portfolio data array for demonstration
 const portfolioData = [
@@ -23,7 +24,7 @@ const portfolioData = [
 
 export default function DappPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="min-h-screen bg-background text-foreground">
       <header className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-6 px-4 space-y-4 sm:space-y-0">
         <Link href="/" passHref>
           <div className="flex items-center cursor-pointer">
@@ -52,7 +53,10 @@ export default function DappPage() {
               Report
             </Button>
           </Link>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
+          {/* Use the ConnectWallet component */}
+          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
+            <ConnectWallet />
+          </div>
         </div>
       </header>
 
