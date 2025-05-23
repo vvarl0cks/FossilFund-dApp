@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 36 32% 82%; /* #E0D4C4 */
-    --foreground: 25 19% 24%; /* #4A3B31 */
+    --background: 40 100% 97%; /* Very light cream, e.g., #FFFBF0 */
+    --foreground: 0 0% 15%;    /* Dark gray / Off-black */
 
-    --card: 36 30% 88%; /* #F0E9DE */
-    --card-foreground: 25 19% 24%; /* #4A3B31 */
+    --card: 40 80% 98%;       /* Info boxes background - very light, almost white */
+    --card-foreground: 0 0% 20%; /* Dark text for info boxes */
 
-    --popover: 36 30% 90%; /* #F2EDE6 */
-    --popover-foreground: 25 19% 24%; /* #4A3B31 */
+    --popover: 40 80% 96%;    /* Similar to card or slightly darker */
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 29 100% 44%; /* #E16B00 */
+    --primary: 28 90% 55%;     /* Vibrant Orange */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 28 29% 65%; /* #C4A992 */
-    --secondary-foreground: 25 19% 24%; /* #4A3B31 */
+    --secondary: 40 60% 92%;   /* A light beige, can be used for subtle contrasts if needed */
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 28 29% 75%; /* #D3BFB0 */
-    --muted-foreground: 28 29% 35%; /* #7E5E45 */
+    --muted: 40 50% 90%;      /* Lighter version for muted elements */
+    --muted-foreground: 0 0% 40%; /* Grayer text */
 
-    --accent: 28 29% 50%; /* #A67B5B */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 28 90% 50%;       /* Slightly darker orange for accents if needed */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 28 29% 70%; /* #CBB5A2 */
-    --input: 36 30% 86%; /* #EDE6DB */
-    --ring: 29 100% 44%; /* #E16B00 */
+    --border: 0 0% 85%;        /* Light gray border for info boxes and other elements */
+    --input: 40 70% 94%;       /* Light cream for input backgrounds */
+    --ring: 28 90% 55%;         /* Orange for focus rings */
 
     --radius: 0.5rem;
 
@@ -51,33 +51,33 @@
   }
 
   .dark {
-    --background: 25 19% 15%; /* Dark Brown for dark mode, example */
-    --foreground: 36 32% 82%; /* Light earthy for dark mode text */
+    --background: 25 20% 12%; 
+    --foreground: 40 100% 90%; 
 
-    --card: 25 19% 20%;
-    --card-foreground: 36 32% 82%;
+    --card: 25 20% 15%;       
+    --card-foreground: 40 100% 85%; 
 
-    --popover: 25 19% 10%;
-    --popover-foreground: 36 32% 82%;
+    --popover: 25 20% 10%;    
+    --popover-foreground: 40 100% 90%;
 
-    --primary: 29 100% 50%; /* Slightly lighter orange for dark mode */
-    --primary-foreground: 0 0% 10%; /* Dark text on orange */
+    --primary: 28 90% 60%;     
+    --primary-foreground: 0 0% 10%; 
 
-    --secondary: 28 29% 40%; /* Darker accent for dark mode secondary */
-    --secondary-foreground: 36 32% 82%;
+    --secondary: 25 20% 20%;   
+    --secondary-foreground: 40 100% 85%;
 
-    --muted: 28 29% 30%;
-    --muted-foreground: 28 29% 70%;
+    --muted: 25 20% 25%;      
+    --muted-foreground: 40 100% 70%; 
 
-    --accent: 28 29% 55%; /* Slightly lighter accent for dark mode */
+    --accent: 28 90% 55%;       
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 28 29% 35%;
-    --input: 25 19% 22%;
-    --ring: 29 100% 50%;
+    --border: 0 0% 30%;        
+    --input: 25 20% 18%;       
+    --ring: 28 90% 60%;         
     
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -104,6 +104,6 @@
     @apply bg-background text-foreground font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif; /* Default heading font, can be overridden */
   }
 }

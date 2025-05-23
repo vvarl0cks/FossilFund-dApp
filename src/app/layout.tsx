@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'FossilFund - Invest in Legacy',
-  description: 'Discover unique investment opportunities in fossil assets with FossilFund.',
+  title: 'FossilFund',
+  description: 'Put your crypto to work with FossilFund. Support AI research to revive extinct species, earn returns, and rewrite the future of life on Earth.',
 };
 
 export default function RootLayout({

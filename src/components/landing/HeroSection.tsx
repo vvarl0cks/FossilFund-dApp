@@ -2,34 +2,49 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
+const InfoBox = ({ text }: { text: string }) => (
+  <div className="bg-card p-6 rounded-lg border border-border shadow-md text-center">
+    <p className="text-lg font-semibold text-card-foreground">{text}</p>
+  </div>
+);
+
 export default function HeroSection() {
   return (
-    <section className="relative bg-card py-20 md:py-32">
-      <div className="absolute inset-0">
-        <Image
-          src="https://placehold.co/1920x1080.png"
-          alt="Abstract background representing fossils and investment"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-10"
-          data-ai-hint="geological strata"
-        />
-         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
-      </div>
-      <div className="container relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Investing in Our Planet's <span className="text-primary">Legacy</span>
-        </h1>
-        <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-muted-foreground sm:text-xl">
-          FossilFund provides unique opportunities to invest in carefully selected fossil assets, balancing historical significance with potential returns. Discover a new class of tangible investments.
-        </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Button size="lg" asChild>
-            <a href="#opportunities">Explore Opportunities</a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-             <a href="#mission">Learn More</a>
-          </Button>
+    <section className="py-16 sm:py-20 bg-background">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center md:justify-start order-2 md:order-1">
+            <Image
+              src="https://placehold.co/400x420.png" 
+              alt="FossilFund Mascot - Dinosaur Scientist with Coin"
+              width={400}
+              height={420}
+              className="rounded-lg"
+              data-ai-hint="dinosaur scientist coin"
+            />
+          </div>
+          <div className="text-center md:text-left order-1 md:order-2">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary mb-6 font-sans">
+              FossilFund
+            </h1>
+            <p className="text-lg text-foreground mb-4 max-w-xl mx-auto md:mx-0">
+              FossilFund lets you put your crypto to work by supporting cutting-edge AI research to bring back extinct species like the dire wolf.
+            </p>
+            <p className="text-lg text-foreground max-w-xl mx-auto md:mx-0">
+              Lock your $FOS, earn real returns, and be part of a movement that's rewriting the future of life on Earth.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 sm:mt-20 text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-8 max-w-2xl mx-auto">
+            Stake your $FOS to generate yield and support research on reviving extinct species
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <InfoBox text="100% Fair Launch" />
+            <InfoBox text="4% APY" />
+            <InfoBox text="Lock & Earn" />
+          </div>
         </div>
       </div>
     </section>
