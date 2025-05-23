@@ -1,7 +1,9 @@
+
 "use client"; // Add this directive
 
 // src/app/community/page.tsx
-
+import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,7 +29,7 @@ interface Comment {
 const comments: Comment[] = [
   {
     id: "1",
-    avatarUrl: "https://github.com/shadcn.png", // Replace with actual avatar URL
+    avatarUrl: "https://placehold.co/40x40.png", 
     name: "shadcn",
     twitterHandle: "@shadcn",
     timestamp: "2 hours ago",
@@ -35,7 +37,7 @@ const comments: Comment[] = [
   },
   {
     id: "2",
-    avatarUrl: "https://github.com/johndoe.png", // Replace with actual avatar URL
+    avatarUrl: "https://placehold.co/40x40.png", 
     name: "John Doe",
     twitterHandle: "@johndoe",
     timestamp: "1 hour ago",
@@ -48,67 +50,98 @@ export default function CommunityPage() {
   const user = null; // Replace with actual user object after authentication
 
   return (
-    <div className="container mx-auto px-4 py-8 md:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Community</h1>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column - Can be used for other community-related content */}
-        <div className="lg:col-span-1">
-          {/* Add any other community-related components or information here */}
-          <Card>
-            <CardHeader>
-              <CardTitle>About the Community</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Welcome to the community section! Connect with other users, share your thoughts, and stay updated on the latest news.</p>
-            </CardContent>
-          </Card>
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <header className="container mx-auto flex justify-between items-center py-6 px-4">
+        <Link href="/dapp" passHref>
+          <div className="flex items-center cursor-pointer">
+            <Image
+              src="/fossil-logo.png"
+              alt="FossilFund Logo"
+              width={40}
+              height={40}
+              data-ai-hint="logo dinosaur"
+            />
+            <h1 className="text-3xl font-bold text-primary ml-2">FossilFund</h1>
+          </div>
+        </Link>
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <Link href="/community" passHref>
+            <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+              Community
+            </Button>
+          </Link>
+          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+            Fund
+          </Button>
+          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+            Report
+          </Button>
+          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Connect Wallet</Button>
         </div>
+      </header>
 
-        {/* Right Column - Comment Section */}
-        <div className="lg:col-span-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Comments</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {user ? (
-                <>
-                  <div className="mb-4">
-                    <Textarea placeholder="Write a comment..." />
-                  </div>
-                  <div className="flex justify-end">
-                    <Button>Post Comment</Button>
-                  </div>
-                </>
-              ) : (
-                <div className="flex justify-center mb-4">
-                  <Button onClick={signInWithTwitter}>Sign in with Twitter/X to comment</Button>
-                </div>
-              )}
+      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow">
+        <h1 className="text-4xl font-bold mb-12 text-center text-primary">Community</h1>
 
-              <div className="mt-8 space-y-6">
-                {comments.map((comment) => (
-                  <div key={comment.id} className="flex space-x-4">
-                    <Avatar>
-                      <AvatarImage src={comment.avatarUrl} />
-                      <AvatarFallback>{comment.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <div className="font-semibold">{comment.name}</div>
-                        <div className="text-sm text-muted-foreground">{comment.twitterHandle}</div>
-                        <div className="text-sm text-muted-foreground">- {comment.timestamp}</div>
-                      </div>
-                      <p className="mt-1">{comment.text}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Can be used for other community-related content */}
+          <div className="lg:col-span-1">
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">About the Community</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Welcome to the FossilFund community! Connect with other enthusiasts, share your thoughts on de-extinction, and stay updated on the latest project news.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - Comment Section */}
+          <div className="lg:col-span-2">
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl">Join the Conversation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                {user ? (
+                  <>
+                    <div className="mb-4">
+                      <Textarea placeholder="Write a comment..." className="min-h-[100px] rounded-md border-input focus:ring-primary" />
                     </div>
+                    <div className="flex justify-end">
+                      <Button className="shadow-md">Post Comment</Button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center justify-center mb-4 p-6 border border-dashed rounded-md">
+                    <p className="mb-4 text-muted-foreground">Want to share your thoughts?</p>
+                    <Button onClick={signInWithTwitter} className="shadow-md">Sign in with X to comment</Button>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                )}
+
+                <div className="mt-8 space-y-6">
+                  {comments.map((comment) => (
+                    <div key={comment.id} className="flex space-x-4 p-4 border rounded-md shadow-sm bg-card">
+                      <Avatar className="h-12 w-12">
+                        <AvatarImage src={comment.avatarUrl} data-ai-hint="profile user" />
+                        <AvatarFallback>{comment.name.charAt(0).toUpperCase()}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <div className="font-semibold text-card-foreground">{comment.name}</div>
+                          <div className="text-xs text-muted-foreground">{comment.twitterHandle}</div>
+                          <div className="text-xs text-muted-foreground">- {comment.timestamp}</div>
+                        </div>
+                        <p className="text-sm text-card-foreground">{comment.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
