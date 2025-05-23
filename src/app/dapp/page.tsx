@@ -13,15 +13,18 @@ export default function DAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <header className="container mx-auto flex justify-between items-center py-6 px-4">
-        <div className="flex items-center">
-          <Image
-            src="/fossil-logo.png"
-            alt="FossilFund Logo"
-            width={40}
-            height={40}
-          />
-          <h1 className="text-3xl font-bold text-primary ml-2">FossilFund</h1>
-        </div>
+        <Link href="/" passHref>
+          <div className="flex items-center cursor-pointer">
+            <Image
+              src="/fossil-logo.png"
+              alt="FossilFund Logo"
+              width={40}
+              height={40}
+              data-ai-hint="logo dinosaur"
+            />
+            <h1 className="text-3xl font-bold text-primary ml-2">FossilFund</h1>
+          </div>
+        </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
           <Link href="/community" passHref>
             <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">

@@ -52,7 +52,7 @@ export default function CommunityPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <header className="container mx-auto flex justify-between items-center py-6 px-4">
-        <Link href="/dapp" passHref>
+        <Link href="/" passHref>
           <div className="flex items-center cursor-pointer">
             <Image
               src="/fossil-logo.png"
@@ -83,7 +83,7 @@ export default function CommunityPage() {
       </header>
 
       <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow">
-        <section className="w-full max-w-4xl mb-12 mx-auto"> {/* Added mx-auto for centering */}
+        <section className="w-full max-w-4xl mb-12 mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <Image
