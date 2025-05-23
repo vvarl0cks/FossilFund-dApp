@@ -1,3 +1,5 @@
+"use client"; // Add this directive
+
 // src/app/community/page.tsx
 
 import { Button } from "@/components/ui/button";
@@ -95,10 +97,10 @@ export default function CommunityPage() {
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
                         <div className="font-semibold">{comment.name}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">{comment.twitterHandle}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">- {comment.timestamp}</div>
+                        <div className="text-sm text-muted-foreground">{comment.twitterHandle}</div>
+                        <div className="text-sm text-muted-foreground">- {comment.timestamp}</div>
                       </div>
-                      <p className="mt-1 text-gray-700 dark:text-gray-300">{comment.text}</p>
+                      <p className="mt-1">{comment.text}</p>
                     </div>
                   </div>
                 ))}
