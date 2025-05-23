@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 const InfoBox = ({ text }: { text: string }) => (
-  <div className="bg-card p-6 rounded-lg border border-border shadow-md text-center">
+  <div className="bg-card p-6 rounded-lg border border-border shadow-md flex items-center justify-center space-x-3">
+    <div className="w-3 h-3 bg-green-500 rounded-full animate-breathe"></div>
     <p className="text-lg font-semibold text-card-foreground">{text}</p>
   </div>
 );
