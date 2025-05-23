@@ -1,5 +1,5 @@
 
-"use client"; 
+"use client";
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ const comments: Comment[] = [
 ];
 
 export default function CommunityPage() {
-  const user = null; 
+  const user = null;
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -103,7 +103,7 @@ export default function CommunityPage() {
           </div>
         </section>
 
-        <h1 className="text-4xl font-bold mb-12 text-center text-primary">Community</h1>
+        <h1 className="text-4xl font-bold mb-12 text-center text-primary font-sans">Community</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
