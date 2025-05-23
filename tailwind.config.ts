@@ -11,8 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)', ...defaultTheme.fontFamily.sans],
-        mono: ['var(--font-geist-mono)', ...defaultTheme.fontFamily.mono],
+        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans], // Changed to Inter
+        mono: ['var(--font-roboto-mono)', ...defaultTheme.fontFamily.mono], // Changed to Roboto Mono
         serif: ['Georgia', 'Times New Roman', 'serif', ...defaultTheme.fontFamily.serif],
       },
       colors: {

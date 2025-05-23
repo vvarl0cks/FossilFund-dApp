@@ -1,22 +1,22 @@
 
 import type {Metadata} from 'next';
-import { Inter } from 'next/font/google'
-import { Geist_Mono } from 'geist/font/mono'; // Added import for Geist_Mono
+import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
-// Removed import for Providers as it's related to a rolled-back SDK
 
 const inter = Inter({
   subsets: ['latin'],
+  variable: '--font-inter', // Added variable for Inter
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const robotoMono = Roboto_Mono({ // Added Roboto_Mono
   subsets: ['latin'],
+  variable: '--font-roboto-mono', // Added variable for Roboto_Mono
+  weight: ['400', '700'] // Specify weights if needed, or remove for all
 });
 
 export const metadata: Metadata = {
   title: 'FossilFund',
-  description: 'FossilFund: Bringing Back Extinct Species with Crypto.', // Updated description
+  description: 'FossilFund: Bringing Back Extinct Species with Crypto.',
 };
 
 export default function RootLayout({
@@ -26,8 +26,7 @@ export default function RootLayout({
 }>,) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${geistMono.variable}`}> {/* Added geistMono.variable */}
-        {/* Removed Providers wrapper */}
+      <body className={`${inter.variable} ${robotoMono.variable} font-sans`}>
         {children}
       </body>
     </html>
