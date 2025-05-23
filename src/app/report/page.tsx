@@ -125,7 +125,7 @@ export default function ReportPage() {
         </section>
 
         <section className="w-full max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-8 text-center font-sans">
             Fund Sold from Portfolio to Date: $100,000
           </h2>
           <Card className="shadow-lg rounded-lg bg-card">
