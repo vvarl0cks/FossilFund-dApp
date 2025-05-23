@@ -12,13 +12,13 @@ const portfolioData = [
     asset: 'SUI',
     amount: '1000',
     marketValue: '$1,200',
-    address: '0x123...',
+    address: '0x1234567890abcdef1234567890abcdef12345678',
   },
   {
     asset: 'USDC',
     amount: '5000',
     marketValue: '$5,000',
-    address: '0x456...',
+    address: '0xabcdef1234567890abcdef1234567890abcdef12',
   },
 ];
 
@@ -53,7 +53,6 @@ export default function DappPage() {
               Report
             </Button>
           </Link>
-          {/* Use the ConnectWallet component */}
           <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
             <ConnectWallet />
           </div>

@@ -1,27 +1,45 @@
 
 "use client";
 
-import ConnectWallet from '@/components/ConnectWallet';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Textarea } from '@/components/ui/textarea';
+import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
+import { useState, useEffect } from 'react'; // Required for potential client-side logic
 
-export default function CommunityPage() {
-  return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Sui Wallet Integration Test - Community
-        </h1>
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg">
-          <ConnectWallet />
-        </div>
-      </div>
-    </main>
-  );
+interface Comment {
+  id: string;
+  avatarUrl: string;
+  avatarHint: string;
+  name: string;
+  twitterHandle: string;
+  timestamp: string;
+  text: string;
 }
 
-/*
-Old content from src/app/community/page.tsx:
+const commentsData: Comment[] = [
+  { id: "1", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "user avatar", name: "CryptoDino", twitterHandle: "@cryptodino", timestamp: "2 hours ago", text: "Love the FossilFund vision! Bringing back the Dire Wolf is epic!", },
+  { id: "2", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "person avatar", name: "PaleoQueen", twitterHandle: "@paleoqueen", timestamp: "1 hour ago", text: "Staked my $FOS, ready for the de-extinction revolution!", },
+  { id: "3", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "generic avatar", name: "SUIExplorer", twitterHandle: "@suiexplorer", timestamp: "30 mins ago", text: "Great to see a DeSci project on SUI. The AI management is a nice touch.", },
+];
 
-        <header className="container mx-auto flex justify-between items-center py-6 px-4">
+export default function CommunityPage() {
+  // Placeholder for user authentication state - replace with actual auth logic
+  const [user, setUser] = useState<null | { name: string }>(null); 
+  
+  const signInWithTwitter = () => {
+    console.log("Attempting to sign in with Twitter/X...");
+    // Placeholder: In a real app, this would trigger an OAuth flow
+    // For now, let's simulate a login
+    setUser({ name: "DemoUser" }); 
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-6 px-4 space-y-4 sm:space-y-0">
         <Link href="/" passHref>
           <div className="flex items-center cursor-pointer">
             <Image
@@ -30,8 +48,9 @@ Old content from src/app/community/page.tsx:
               width={40}
               height={40}
               data-ai-hint="logo dinosaur"
+              className="mr-2"
             />
-            <h1 className="text-3xl font-bold text-primary ml-2 font-sans">FossilFund</h1>
+            <h1 className="text-3xl font-bold text-primary ml-0 font-sans">FossilFund</h1>
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
@@ -48,11 +67,14 @@ Old content from src/app/community/page.tsx:
               Report
             </Button>
           </Link>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
+          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
+            <ConnectWallet />
+          </div>
         </div>
       </header>
 
-        <section className="w-full max-w-4xl mb-12 mx-auto">
+      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow flex flex-col items-center">
+        <section className="w-full max-w-4xl mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <Image
@@ -80,7 +102,7 @@ Old content from src/app/community/page.tsx:
 
         <h1 className="text-4xl font-bold mb-12 text-center text-primary font-sans">Community</h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-6xl">
           <div className="lg:col-span-1">
             <Card className="shadow-lg rounded-lg bg-card">
               <CardHeader>
@@ -123,10 +145,10 @@ Old content from src/app/community/page.tsx:
                 )}
 
                 <div className="mt-8 space-y-6">
-                  {comments.map((comment) => (
+                  {commentsData.map((comment) => (
                     <div key={comment.id} className="flex space-x-4 p-4 border border-border rounded-md shadow-sm bg-card">
                       <Avatar className="h-12 w-12">
-                        <AvatarImage src={comment.avatarUrl} data-ai-hint={comment.avatarHint} />
+                        <AvatarImage src={comment.avatarUrl} alt={`${comment.name}'s avatar`} data-ai-hint={comment.avatarHint} />
                         <AvatarFallback className="bg-muted text-muted-foreground">{comment.name.charAt(0).toUpperCase()}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
@@ -145,27 +167,6 @@ Old content from src/app/community/page.tsx:
           </div>
         </div>
       </main>
-
-const signInWithTwitter = () => {
-  console.log("Signing in with Twitter/X...");
-  // Actual Twitter sign-in logic would go here
-};
-
-interface Comment {
-  id: string;
-  avatarUrl: string;
-  avatarHint: string;
-  name: string;
-  twitterHandle: string;
-  timestamp: string;
-  text: string;
+    </div>
+  );
 }
-
-const comments: Comment[] = [
-  { id: "1", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "user avatar", name: "shadcn", twitterHandle: "@shadcn", timestamp: "2 hours ago", text: "This is a great community section!", },
-  { id: "2", avatarUrl: "https://placehold.co/40x40.png", avatarHint: "person avatar", name: "John Doe", twitterHandle: "@johndoe", timestamp: "1 hour ago", text: "Looking forward to more updates.", },
-];
-
-  const user = null; // Placeholder for user authentication state
-
-*/

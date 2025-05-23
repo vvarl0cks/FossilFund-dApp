@@ -1,7 +1,9 @@
 
 "use client";
-import Link from 'next/link';
+
+import Image from 'next/image';
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
@@ -11,30 +13,73 @@ import {
   TableRow,
   TableCell,
 } from "@/components/ui/table";
-import ConnectWallet from '@/components/ConnectWallet';
+import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
+
+interface ReportItem {
+  id: string;
+  iconUrl: string;
+  iconHint: string;
+  name: string;
+  researchColumn1: string;
+  researchColumn2: string;
+  contributedFunds: string;
+}
+
+const reportData: ReportItem[] = [
+  {
+    id: "1",
+    iconUrl: "https://placehold.co/32x32.png",
+    iconHint: "genetics lab",
+    name: "Colossal Biosciences",
+    researchColumn1: "CRISPR Gene Editing",
+    researchColumn2: "Mammoth Embryo Development",
+    contributedFunds: "$40,000",
+  },
+  {
+    id: "2",
+    iconUrl: "https://placehold.co/32x32.png",
+    iconHint: "dinosaur dna",
+    name: "Revive & Restore",
+    researchColumn1: "Passenger Pigeon De-extinction",
+    researchColumn2: "Black-footed Ferret Cloning",
+    contributedFunds: "$30,000",
+  },
+  {
+    id: "3",
+    iconUrl: "https://placehold.co/32x32.png",
+    iconHint: "wolf research",
+    name: "Dire Wolf Project",
+    researchColumn1: "Ancient DNA Sequencing",
+    researchColumn2: "Surrogate Species Research",
+    contributedFunds: "$20,000",
+  },
+  {
+    id: "4",
+    iconUrl: "https://placehold.co/32x32.png",
+    iconHint: "conservation biology",
+    name: "BioRescue",
+    researchColumn1: "Northern White Rhino IVF",
+    researchColumn2: "Stem Cell Associated Techniques",
+    contributedFunds: "$10,000",
+  },
+];
+
 
 export default function ReportPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          Sui Wallet Integration Test - Report
-        </h1>
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg">
-          <ConnectWallet />
-        </div>
-      </div>
-    </main>
-  );
-}
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-6 px-4 space-y-4 sm:space-y-0">
+        <Link href="/" passHref>
+          <div className="flex items-center cursor-pointer">
             <Image
               src="/fossil-logo.png"
               alt="FossilFund Logo"
               width={40}
               height={40}
               data-ai-hint="logo dinosaur"
+              className="mr-2"
             />
-            <h1 className="text-3xl font-bold text-primary ml-2 font-sans">FossilFund</h1>
+            <h1 className="text-3xl font-bold text-primary ml-0 font-sans">FossilFund</h1>
           </div>
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
@@ -51,12 +96,14 @@ export default function ReportPage() {
           <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md border-primary text-primary">
             Report
           </Button>
-          <Button className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">Connect Wallet</Button>
+          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
+            <ConnectWallet />
+          </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow">
-        <section className="w-full max-w-4xl mb-12 mx-auto">
+      <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8 flex-grow flex flex-col items-center">
+        <section className="w-full max-w-4xl mb-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-shrink-0">
               <Image
@@ -96,8 +143,8 @@ export default function ReportPage() {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="w-[250px] text-muted-foreground uppercase tracking-wider">Name</TableHead>
-                      <TableHead className="text-muted-foreground uppercase tracking-wider">Research</TableHead>
-                      <TableHead className="text-muted-foreground uppercase tracking-wider">Research</TableHead>
+                      <TableHead className="text-muted-foreground uppercase tracking-wider">Research Area 1</TableHead>
+                      <TableHead className="text-muted-foreground uppercase tracking-wider">Research Area 2</TableHead>
                       <TableHead className="text-right text-muted-foreground uppercase tracking-wider">Contributed Funds</TableHead>
                     </TableRow>
                   </TableHeader>
