@@ -36,10 +36,10 @@ export default function Navbar() {
           </span>
         </Link>
         <nav className="flex items-center space-x-2"> {/* Adjusted space-x if needed */}
-          <Button variant="ghost" size="icon" aria-label="Twitter / X">
+          <Button variant="ghost" size="icon" aria-label="Twitter / X" className="border border-border">
             <XIcon className="h-6 w-6 text-foreground" />
           </Button>
-          <Button variant="ghost" size="icon" aria-label="Documentation">
+          <Button variant="ghost" size="icon" aria-label="Documentation" className="border border-border">
             <FileText className="h-6 w-6 text-foreground" />
           </Button>
           <Link href="/dapp" passHref>
