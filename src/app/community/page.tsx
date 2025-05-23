@@ -70,9 +70,11 @@ export default function CommunityPage() {
               Community
             </Button>
           </Link>
-          <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
-            Fund
-          </Button>
+          <Link href="/dapp" passHref>
+            <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
+              Fund
+            </Button>
+          </Link>
           <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md">
             Report
           </Button>
