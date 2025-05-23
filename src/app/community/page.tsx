@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Textarea } from '@/components/ui/textarea';
-import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
-import { useState, useEffect } from 'react'; // Required for potential client-side logic
+import ConnectWallet from '@/components/ConnectWallet';
+import { useState } from 'react';
 
 interface Comment {
   id: string;
@@ -27,13 +27,10 @@ const commentsData: Comment[] = [
 ];
 
 export default function CommunityPage() {
-  // Placeholder for user authentication state - replace with actual auth logic
   const [user, setUser] = useState<null | { name: string }>(null); 
   
   const signInWithTwitter = () => {
     console.log("Attempting to sign in with Twitter/X...");
-    // Placeholder: In a real app, this would trigger an OAuth flow
-    // For now, let's simulate a login
     setUser({ name: "DemoUser" }); 
   };
 
@@ -67,9 +64,7 @@ export default function CommunityPage() {
               Report
             </Button>
           </Link>
-          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
-            <ConnectWallet />
-          </div>
+          <ConnectWallet />
         </div>
       </header>
 

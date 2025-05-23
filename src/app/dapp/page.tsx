@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
+import ConnectWallet from '@/components/ConnectWallet';
 
 // Define a dummy portfolio data array for demonstration
 const portfolioData = [
@@ -53,9 +53,7 @@ export default function DappPage() {
               Report
             </Button>
           </Link>
-          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
-            <ConnectWallet />
-          </div>
+          <ConnectWallet />
         </div>
       </header>
 

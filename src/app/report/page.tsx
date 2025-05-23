@@ -13,7 +13,7 @@ import {
   TableRow,
   TableCell,
 } from "@/components/ui/table";
-import ConnectWallet from '@/components/ConnectWallet'; // Import ConnectWallet component
+import ConnectWallet from '@/components/ConnectWallet';
 
 interface ReportItem {
   id: string;
@@ -96,9 +96,7 @@ export default function ReportPage() {
           <Button variant="outline" className="font-semibold px-4 py-2 sm:px-6 sm:py-3 shadow-md border-primary text-primary">
             Report
           </Button>
-          <div className="font-semibold px-0 py-0 sm:px-0 sm:py-0 shadow-md rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-primary-foreground">
-            <ConnectWallet />
-          </div>
+          <ConnectWallet />
         </div>
       </header>
 
