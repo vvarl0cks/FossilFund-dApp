@@ -1,7 +1,7 @@
 
 import Navbar from '@/components/landing/Navbar';
 import HeroSection from '@/components/landing/HeroSection';
-import { Toaster } from "@/components/ui/toaster";
+// Toaster removed from here, it's now in layout.tsx
 
 export default function LandingPage() {
   return (
@@ -10,8 +10,8 @@ export default function LandingPage() {
       <main className="flex-grow">
         <HeroSection />
       </main>
-      <Toaster />
-      {/* Footer removed as per new design */}
+      {/* Footer will be rendered by layout.tsx */}
+      {/* Toaster is now globally available from layout.tsx */}
     </div>
   );
 }
