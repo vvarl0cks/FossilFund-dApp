@@ -20,6 +20,30 @@ const portfolioData = [
     marketValue: '$5,000',
     address: '0xabcdef1234567890abcdef1234567890abcdef12',
   },
+  {
+    asset: 'WALRUS',
+    amount: '500',
+    marketValue: '$250',
+    address: '0x2b9e78c4f0a1d6e8f7b2c5d3e6a9b0f1c2d4e5f6',
+  },
+  {
+    asset: 'LOFI',
+    amount: '10000',
+    marketValue: '$100',
+    address: '0x5e8f7b2c5d3e6a9b0f1c2d4e5f6a2b9e78c4f0a1',
+  },
+  {
+    asset: 'BLUEFIN',
+    amount: '200',
+    marketValue: '$2,000',
+    address: '0x9b0f1c2d4e5f6a2b9e78c4f0a1d6e8f7b2c5d3e6',
+  },
+  {
+    asset: 'SWEAT',
+    amount: '50000',
+    marketValue: '$500',
+    address: '0xd6e8f7b2c5d3e6a9b0f1c2d4e5f6a2b9e78c4f0a',
+  },
 ];
 
 export default function DappPage() {
