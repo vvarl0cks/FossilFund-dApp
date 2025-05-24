@@ -2,7 +2,7 @@
 
 $FOS Meme Token Smart Contract: https://github.com/FossilFund/FossilFundFOSMemeToken/blob/main/%24FOSToken
 
-FossilFund AI Agent Fund Manager Repo: 
+FossilFund AI Agent Fund Manager Repo: https://github.com/mmmnaufal19/fossilfund-agent
 
 ## Project Description
 
