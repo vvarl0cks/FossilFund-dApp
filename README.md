@@ -2,7 +2,7 @@
 
 ## Project Description
 
-FossilFund is a groundbreaking DeSci (Decentralized Science) meme token built on the **SUI network** that allows you to participate in cutting-edge AI research aimed at de-extincting species. Inspired by the potential resurrection of the dire wolf, FossilFund provides a unique way to put your crypto to work and directly contribute to scientific breakthroughs that could bring back lost life on Earth.
+FossilFund is a groundbreaking DeSci (Decentralised Science) meme token built on the **SUI network** that allows you to participate in cutting-edge AI research aimed at de-extincting species. Inspired by the potential resurrection of the dire wolf, FossilFund provides a unique way to put your crypto to work and directly contribute to scientific breakthroughs that could bring back lost life on Earth.
 
 By locking your `$FOS` tokens, you not only earn real returns but also become an active part of a movement that is rewriting the future of biodiversity. The project is managed by advanced AI, ensuring efficient allocation of resources towards promising research initiatives.
 
@@ -19,7 +19,7 @@ Your crypto isn't just an investment; it's fuel for the return of lost species.
 
 ## How to Get Started
 
-1.  **Obtain $FOS Tokens:** Acquire `$FOS` tokens through supported decentralized exchanges on the SUI network. (Further details on specific exchanges will be provided soon).
+1.  **Obtain $FOS Tokens:** Acquire `$FOS` tokens through supported decentralised exchanges on the SUI network. (Further details on specific exchanges will be provided soon).
 2.  **Connect Your Wallet:** Connect your SUI-compatible wallet to the FossilFund platform.
 3.  **Stake Your $FOS:** Navigate to the staking section of the platform and lock your desired amount of `$FOS` tokens.
 4.  **Earn Rewards:** Start earning rewards in `$FOS` based on your staked amount and the platform's performance.
@@ -44,10 +44,10 @@ This project is licensed under the [Insert License Type, e.g., MIT License] - se
 
 ## Acknowledgements
 
-- The SUI network for providing a robust blockchain platform.
-- The researchers and scientists dedicated to advancing de-extinction technology.
+- The SUI network provides a robust blockchain platform.
+- The researchers and scientists are dedicated to advancing de-extinction technology.
 - The FossilFund community for their support and belief in our mission.
 
 ---
 
-*Note: This is a nascent project and details regarding token acquisition, platform access, and specific research projects will be announced through official channels. Stay tuned for updates!*
+*Note: This is a nascent project, and details regarding token acquisition, platform access, and specific research projects will be announced through official channels. Stay tuned for updates!*
