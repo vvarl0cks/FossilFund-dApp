@@ -1,6 +1,7 @@
 # FossilFund: Bringing Back Extinct Life, One Block at a Time
 
 $FOS Meme Token Smart Contract: https://github.com/FossilFund/FossilFundFOSMemeToken/blob/main/%24FOSToken
+
 FossilFund AI Agent Fund Manager Repo: 
 
 ## Project Description
