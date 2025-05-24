@@ -41,9 +41,11 @@ export default function Navbar() {
               <XIcon className="h-6 w-6 text-foreground" />
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" aria-label="Documentation" className="border border-border">
-            <FileText className="h-6 w-6 text-foreground" />
-          </Button>
+          <Link href="https://fossils-organization-1.gitbook.io/fossilfund-litepaper-v1/" target="_blank" rel="noopener noreferrer" passHref>
+            <Button variant="ghost" size="icon" aria-label="Documentation" className="border border-border">
+              <FileText className="h-6 w-6 text-foreground" />
+            </Button>
+          </Link>
           <Link href="/dapp" passHref>
             <Button
               className="px-6 py-3 text-lg font-semibold rounded-lg shadow-md"
