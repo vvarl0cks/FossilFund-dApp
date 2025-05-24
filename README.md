@@ -12,6 +12,8 @@ By locking your `$FOS` tokens, you not only earn real returns but also become an
 
 Your crypto isn't just an investment; it's fuel for the return of lost species.
 
+![FossilFund](FossilFund.png)   
+
 ## Features
 
 - **DeSci Focus:** Directly supports real-world research in de-extinction.
