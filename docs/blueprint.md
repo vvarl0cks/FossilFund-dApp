@@ -1,4 +1,4 @@
-# **App Name**: FossilFund Landing
+# **App Name**: FossilFund
 
 ## Core Features:
 

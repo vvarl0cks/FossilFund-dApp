@@ -1,4 +1,4 @@
-# FossilFund: Bringing Back Extinct Species with Crypto
+# FossilFund: Bringing Back Extinct Life, One Block at a Time
 
 ## Project Description
 
