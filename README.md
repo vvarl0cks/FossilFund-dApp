@@ -6,7 +6,7 @@ FossilFund AI Agent Fund Manager Repo: https://github.com/mmmnaufal19/fossilfund
 
 ## Project Description
 
-FossilFund is a groundbreaking DeSci (Decentralised Science) meme token built on the **SUI network** that allows you to participate in cutting-edge AI research aimed at de-extincting species. Inspired by the potential resurrection of the dire wolf, FossilFund provides a unique way to put your crypto to work and directly contribute to scientific breakthroughs that could bring back lost life on Earth.
+FossilFund is a DeSci (Decentralised Science) meme token built on the **SUI network** that allows you to participate in research aimed at de-extincting species. Inspired by the potential resurrection of the dire wolf, FossilFund provides a unique way to put your crypto to work and directly contribute to scientific breakthroughs with the help of AI Agents, that could bring back lost life on Earth.
 
 By locking your `$FOS` tokens, you not only earn real returns but also become an active part of a movement that is rewriting the future of biodiversity. The project is managed by advanced AI, ensuring efficient allocation of resources towards promising research initiatives.
 
