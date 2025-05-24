@@ -1,5 +1,8 @@
 # FossilFund: Bringing Back Extinct Life, One Block at a Time
 
+$FOS Meme Token Smart Contract: https://github.com/FossilFund/FossilFundFOSMemeToken/blob/main/%24FOSToken
+FossilFund AI Agent Fund Manager Repo: 
+
 ## Project Description
 
 FossilFund is a groundbreaking DeSci (Decentralised Science) meme token built on the **SUI network** that allows you to participate in cutting-edge AI research aimed at de-extincting species. Inspired by the potential resurrection of the dire wolf, FossilFund provides a unique way to put your crypto to work and directly contribute to scientific breakthroughs that could bring back lost life on Earth.
